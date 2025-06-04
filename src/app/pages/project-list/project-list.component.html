@@ -1,0 +1,30 @@
+<div class="project-list-container">
+  <div class="header">
+    <h2>Project List</h2>
+    <div class="header-actions">
+      <button (click)="createNewProject()" class="create-button">Create New Project</button>
+      <button (click)="logout()" class="logout-button">Logout</button>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="message">Loading projects...</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+
+  <div *ngIf="!loading && !error && projects.length === 0" class="message">No projects found.</div>
+
+  <div *ngIf="!loading && !error && projects.length > 0" class="projects-grid">
+    <div *ngFor="let project of projects" class="project-card">
+      <div class="card-content">
+        <h3>{{ project.name }}</h3>
+        <p><strong>Description:</strong> {{ project.description }}</p>
+        <p><strong>Start Date:</strong> {{ project.startDate }}</p>
+        <p><strong>End Date:</strong> {{ project.endDate }}</p>
+        <p><strong>Status:</strong> {{ project.status }}</p>
+      </div>
+      <div class="card-actions">
+        <span class="edit-icon" (click)="editProject(project.id)" title="Edit Project">&#9998;</span>
+        <span class="delete-icon" (click)="deleteProject(project.id)" title="Delete Project">&#128465;</span>
+      </div>
+    </div>
+  </div>
+</div>

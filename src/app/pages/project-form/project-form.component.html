@@ -1,0 +1,51 @@
+<div class="project-form-container">
+  <h2>{{ isEditMode ? 'Edit Project' : 'Create New Project' }}</h2>
+
+  <form [formGroup]="projectForm" (ngSubmit)="saveProject()">
+    <input type="hidden" formControlName="id">
+
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name" required>
+      <div *ngIf="f['name'].invalid && (f['name'].dirty || f['name'].touched)" class="validation-error">
+        <div *ngIf="f['name'].errors?.['required']">Name is required.</div>
+      </div>
+
+      <label for="description">Description:</label>
+      <textarea id="description" formControlName="description" required></textarea>
+      <div *ngIf="f['description'].invalid && (f['description'].dirty || f['description'].touched)" class="validation-error">
+        <div *ngIf="f['description'].errors?.['required']">Description is required.</div>
+      </div>
+
+      <label for="startDate">Start Date:</label>
+      <input type="date" id="startDate" formControlName="startDate" required>
+      <div *ngIf="f['startDate'].invalid && (f['startDate'].dirty || f['startDate'].touched)" class="validation-error">
+        <div *ngIf="f['startDate'].errors?.['required']">Start Date is required.</div>
+      </div>
+
+      <label for="endDate">End Date:</label>
+      <input type="date" id="endDate" formControlName="endDate" required>
+      <div *ngIf="f['endDate'].invalid && (f['endDate'].dirty || f['endDate'].touched)" class="validation-error">
+        <div *ngIf="f['endDate'].errors?.['required']">End Date is required.</div>
+      </div>
+
+      <label for="status">Status:</label>
+      <select id="status" formControlName="status" required>
+        <option value="PLANIFICADO">PLANIFICADO</option>
+        <option value="EN_PROGRESO">EN_PROGRESO</option>
+        <option value="COMPLETADO">COMPLETADO</option>
+        <option value="CANCELADO">CANCELADO</option>
+      </select>
+
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" [disabled]="!projectForm.valid">{{ isEditMode ? 'Update Project' : 'Create Project' }}</button>
+      <button type="button" (click)="cancel()" class="cancel-button">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<pre>
+  {{ projectForm.value | json }}
+</pre>

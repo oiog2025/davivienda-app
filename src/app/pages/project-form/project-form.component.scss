@@ -1,0 +1,131 @@
+/* General form container styling */
+.project-form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Form title */
+.project-form-container h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2em;
+  font-weight: 600;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 15px;
+}
+
+/* Individual form group styling */
+.form-group {
+  margin-bottom: 25px;
+}
+
+/* Label styling */
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+  font-size: 1.1em;
+}
+
+/* Input, textarea, and select field styling */
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea,
+.form-group select {
+  width: calc(100% - 24px); /* Account for padding and border */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f8f8f8;
+}
+
+/* Focus state for inputs */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+/* Textarea specific adjustments */
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Validation error messages */
+.validation-error {
+  color: #dc3545; /* Bootstrap danger red */
+  font-size: 0.9em;
+  margin-top: 6px;
+  font-weight: 400;
+}
+
+/* Styling for invalid input fields when touched */
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border-color: #dc3545; /* Red border for invalid fields */
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
+}
+
+/* Form actions container */
+.form-actions {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 15px; /* Space between buttons */
+  margin-top: 35px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+/* Button styling */
+.form-actions button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 600;
+}
+
+/* Submit button */
+.form-actions button[type="submit"] {
+  background-color: #28a745; /* Green for submit/create/update */
+  color: white;
+}
+
+.form-actions button[type="submit"]:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.form-actions button[type="submit"]:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Cancel button */
+.cancel-button {
+  background-color: #6c757d; /* Grey for cancel */
+  color: white;
+}
+
+.cancel-button:hover {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+}

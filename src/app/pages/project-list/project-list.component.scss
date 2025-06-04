@@ -1,0 +1,134 @@
+/* src/app/components/project-list/project-list.component.css */
+.project-list-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.header h2 {
+  color: #333;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+.create-button {
+  padding: 8px 15px;
+  background-color: #28a745; /* Green for create */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.create-button:hover {
+  background-color: #218838;
+}
+
+.logout-button {
+  padding: 8px 15px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}
+
+.message {
+  text-align: center;
+  font-size: 1.2em;
+  color: #666;
+  margin-top: 50px;
+}
+
+.error-message {
+  text-align: center;
+  font-size: 1.2em;
+  color: red;
+  margin-top: 50px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative; /* Needed for absolute positioning of actions if desired */
+}
+
+.project-card .card-content {
+  flex-grow: 1; /* Allows content to take up available space */
+}
+
+.project-card h3 {
+  color: #007bff;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.project-card p strong {
+  color: #333;
+}
+
+.card-actions {
+  text-align: right; /* Align action icons to the right */
+  margin-top: 15px; /* Space between content and actions */
+}
+
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
+  font-size: 1.3em; /* Adjust icon size as needed */
+  margin-left: 10px; /* Space between icons */
+  transition: color 0.2s ease-in-out;
+}
+
+.edit-icon {
+  color: #007bff; /* Blue for edit */
+}
+
+.edit-icon:hover {
+  color: #0056b3;
+}
+
+.delete-icon {
+  color: #dc3545; /* Red for delete */
+}
+
+.delete-icon:hover {
+  color: #c82333;
+}
