@@ -7,26 +7,27 @@
     <div class="form-group">
       <label for="name">Name:</label>
       <input type="text" id="name" formControlName="name" required>
-      <div *ngIf="f['name'].invalid && (f['name'].dirty || f['name'].touched)" class="validation-error">
-        <div *ngIf="f['name'].errors?.['required']">Name is required.</div>
+      <div *@if="f['name'].invalid && (f['name'].dirty || f['name'].touched)" class="validation-error">
+        <div *@if="f['name'].errors?.['required']">Name is required.</div>
       </div>
 
       <label for="description">Description:</label>
       <textarea id="description" formControlName="description" required></textarea>
-      <div *ngIf="f['description'].invalid && (f['description'].dirty || f['description'].touched)" class="validation-error">
-        <div *ngIf="f['description'].errors?.['required']">Description is required.</div>
+      <div *@if="f['description'].invalid && (f['description'].dirty || f['description'].touched)"
+           class="validation-error">
+        <div *@if="f['description'].errors?.['required']">Description is required.</div>
       </div>
 
       <label for="startDate">Start Date:</label>
       <input type="date" id="startDate" formControlName="startDate" required>
-      <div *ngIf="f['startDate'].invalid && (f['startDate'].dirty || f['startDate'].touched)" class="validation-error">
-        <div *ngIf="f['startDate'].errors?.['required']">Start Date is required.</div>
+      <div *@if="f['startDate'].invalid && (f['startDate'].dirty || f['startDate'].touched)" class="validation-error">
+        <div *@if="f['startDate'].errors?.['required']">Start Date is required.</div>
       </div>
 
       <label for="endDate">End Date:</label>
       <input type="date" id="endDate" formControlName="endDate" required>
-      <div *ngIf="f['endDate'].invalid && (f['endDate'].dirty || f['endDate'].touched)" class="validation-error">
-        <div *ngIf="f['endDate'].errors?.['required']">End Date is required.</div>
+      <div *@if="f['endDate'].invalid && (f['endDate'].dirty || f['endDate'].touched)" class="validation-error">
+        <div *@if="f['endDate'].errors?.['required']">End Date is required.</div>
       </div>
 
       <label for="status">Status:</label>
